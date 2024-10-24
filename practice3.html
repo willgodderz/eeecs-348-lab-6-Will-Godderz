@@ -1,0 +1,30 @@
+<html>
+<head>
+    <h1>String Verification</h1>
+</head>
+<body>
+    <label for="input1">Enter password 1:</label>
+    <input type="text" id="input1"><br><br>
+    
+    <label for="input2">Enter password 2:</label>
+    <input type="text" id="input2"><br><br>
+    
+    <button id="verifyButton">Verify</button>
+
+    <script>
+        document.getElementById('verifyButton').onclick = function() {
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+
+            if (input1.length < 8) {
+                alert("password must be longer");
+            } else if (input1 !== input2) {
+                alert("passsword do not match.");
+            } else {
+                alert("password match!");
+            }
+        };
+    </script>
+</body>
+</html>
+

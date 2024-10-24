@@ -1,0 +1,58 @@
+<html>
+<head>
+    <h1>Change Paragraph Color and Border</h1>
+</head>
+<body>
+    
+    <div id="colorParagraph" style="padding: 20px; border: 5px solid black;"></div>
+
+    <label>Background Red (0-255):</label>
+    <input type="number" id="bgRed" value="0" min="0" max="255"><br>
+    
+    <label>Background Green (0-255):</label>
+    <input type="number" id="bgGreen" value="0" min="0" max="255"><br>
+    
+    <label>Background Blue (0-255):</label>
+    <input type="number" id="bgBlue" value="0" min="0" max="255"><br>
+    
+    <label>Border Red (0-255):</label>
+    <input type="number" id="borderRed" value="0" min="0" max="255"><br>
+    
+    <label>Border Green (0-255):</label>
+    <input type="number" id="borderGreen" value="0" min="0" max="255"><br>
+    
+    <label>Border Blue (0-255):</label>
+    <input type="number" id="borderBlue" value="0" min="0" max="255"><br>
+
+    <label>Border Width (px):</label>
+    <input type="number" id="borderWidth" value="5" min="1"><br>
+
+    <button id="applyButton">Apply</button>
+
+    <script>
+        document.getElementById('applyButton').onclick = function() {
+            // Get background color values
+            const bgRed = document.getElementById('bgRed').value;
+            const bgGreen = document.getElementById('bgGreen').value;
+            const bgBlue = document.getElementById('bgBlue').value;
+
+            // Get border color values
+            const borderRed = document.getElementById('borderRed').value;
+            const borderGreen = document.getElementById('borderGreen').value;
+            const borderBlue = document.getElementById('borderBlue').value;
+
+            const borderWidth = document.getElementById('borderWidth').value;
+
+            // Create RGB color strings
+            const bgColor = `rgb(${bgRed}, ${bgGreen}, ${bgBlue})`;
+            const borderColor = `rgb(${borderRed}, ${borderGreen}, ${borderBlue})`;
+
+            const paragraph = document.getElementById('colorParagraph');
+            paragraph.style.backgroundColor = bgColor;
+            paragraph.style.borderColor = borderColor;
+            paragraph.style.borderWidth = borderWidth + 'px';
+        };
+    </script>
+</body>
+</html>
+
